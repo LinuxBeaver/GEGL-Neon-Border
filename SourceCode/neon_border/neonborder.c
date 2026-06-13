@@ -18,7 +18,7 @@
  */
 
 /* 
-GEGL GRAPH OF NEON BORDER, *may not be 100% accurate. If you paste below in Gimp's
+GEGL GRAPH OF NEON BORDER, *may not be 100% accurate. If you paste below in Gimpꞌs
 GEGL Graph you can test this filter without installing it.
 
 color-overlay value=#ff2000
@@ -56,12 +56,12 @@ property_color (colorneon, _("Color (recommended white)"), "#ffffff")
    ui_meta ("visible", "! huemode")
 
 property_color  (colorneon2, _("Color 2"), "#00ff27")
-  description   (_("The glow's color (defaults to a green)"))
+  description   (_("The glowꞌs color (defaults to a green)"))
   ui_meta     ("sensitive", "! huemode")
    ui_meta ("visible", "! huemode")
 
 /*This is having a problem. The color sometimes does not update
-until Gimp's clipping setting is changed from Adjust to Clip.
+until Gimpꞌs clipping setting is changed from Adjust to Clip.
 I think it needs to be inside a composer - beaver, UPDATE BUG SOLVED IN MID 2023*/
 
 property_double (blurstroke, _("Blur radius"), 2.2)
@@ -123,7 +123,7 @@ property_double (opacityglow, _("Opacity of Glow"), 0.40)
     ui_range    (0.00, 1.00)
 
 property_boolean (clipbugpolicy, _("Disable clipping (Allows color update delay bug)"), TRUE)
-  description    (_("Hidden setting - This checkbox removes the shadow clip bug for compliance with GIMP 3's non-destructive text editing. If enabled this will triger another bug only seen after using Neon Border heavily, said bug appears usually after a few minutes of usage and will cause Neon Border to delay a selected color update until another slider is moved. It is suggested to enable this once one applies the filter. But keep it disabled while editing Neon Border unless you can tolerate a delayed color update."))
+  description    (_("Hidden setting - This checkbox removes the shadow clip bug for compliance with GIMP 3ꞌs non-destructive text editing. If enabled this will triger another bug only seen after using Neon Border heavily, said bug appears usually after a few minutes of usage and will cause Neon Border to delay a selected color update until another slider is moved. It is suggested to enable this once one applies the filter. But keep it disabled while editing Neon Border unless you can tolerate a delayed color update."))
     ui_meta     ("role", "output-extent")
 
 enum_start (gegl_neon_mode_typebeavneon)
@@ -140,7 +140,7 @@ property_enum (type, _("Setting for Neon"),
     ui_meta     ("role", "output-extent")
 
 property_boolean (offcanvasclip, _("Off canvas clipping"), TRUE)
-  description    (_("A trade off between two technical settings, default TRUE is best for text styles to prevent the glowing border outlines from clipping, but the consequence is canvas bordering content will always clip with a glowing line.  When disabled FALSE Neon Border doesn't clip at the end of the canvas so opaque pixels touching the canvas canvas don't have a glowing line, but text styles will clip if the outline borders are large, thus making the text style bad. In example, when TRUE said glowing line clip will present itself on a transparent covered image of a human that cuts off at the ankles, because the ankles are the canvas edge. Said image of person's ankles will clip if TRUE, and not clip of FALSE. This exist because there is no perfect GEGL graph only trade offs. Put simply, consider making FALSE for human legs or any content touching the canvas, for text styles on canvas keep TRUE "))
+  description    (_("A trade off between two technical settings, default TRUE is best for text styles to prevent the glowing border outlines from clipping, but the consequence is canvas bordering content will always clip with a glowing line.  When disabled FALSE Neon Border doesnꞌt clip at the end of the canvas so opaque pixels touching the canvas canvas donꞌt have a glowing line, but text styles will clip if the outline borders are large, thus making the text style bad. In example, when TRUE said glowing line clip will present itself on a transparent covered image of a human that cuts off at the ankles, because the ankles are the canvas edge. Said image of personꞌs ankles will clip if TRUE, and not clip of FALSE. This exist because there is no perfect GEGL graph only trade offs. Put simply, consider making FALSE for human legs or any content touching the canvas, for text styles on canvas keep TRUE "))
 
 
 #else
